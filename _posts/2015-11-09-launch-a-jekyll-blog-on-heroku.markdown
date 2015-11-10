@@ -15,7 +15,10 @@ Folloing the installation instructions from the [Jekyll website][jekyll-home]
 
 
 
-Once in the new project directory, use Bundler to initialize a new Gemfile (Bundler will create a gemfile in the root directory of the project)
+Once in the new project directory, initiailize a new git file:
+$git init
+
+Then, use Bundler to initialize a new Gemfile (Bundler will create a gemfile in the root directory of the project)
 { % highlight ruby % }
   bundle init
 { % endhighlight% }
@@ -60,6 +63,26 @@ Add a config.ru file containing:
   require 'yaml'
   run Rack::Jekyll.new
 {% endhighlight %}
+
+
+Check everything into your git file.
+$git add .
+$git commit -am 'Initial commit'
+
+Deploy:
+
+When we deploy to heroku, we will use our local master to push to Heroku.
+Assuming you have Heroku Toolbelt installed and an account with Heroku, do this:
+
+$heroku create # this will create a new app on your account
+$git push heroku master
+
+To view your new site:
+$heroku open
+
+Barring any errors, this should setup a new Heroku app running Puma, and serve your new Jekyll blog.
+
+Next post will be a walkthrough of attaching a custom domain to your new Jekyll blog served from Heroku!
 
 
 [jekyll-home]: https://jekyllrb.com/
