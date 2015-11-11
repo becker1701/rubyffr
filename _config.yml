@@ -6,19 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: Ruby - For Future Reference
+email: brian@rubyffr.com
+description: This is a blog which is about things that I learn about Ruby, Rails and web development.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://rubyffr.com" # the base hostname & protocol for your site
+twitter_username: becker1701
+github_username:  becker1701
 
 # Build settings
 markdown: kramdown
 
 gems: ['kramdown']
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', '_vendor', 'Procfile', 'Rakefile', '.bundle']
