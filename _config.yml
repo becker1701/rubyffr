@@ -18,4 +18,4 @@ github_username:  becker1701
 markdown: kramdown
 
 gems: ['kramdown']
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', '_vendor', 'Procfile', 'Rakefile', '.bundle']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', '_vendor', 'Procfile', 'Rakefile']
