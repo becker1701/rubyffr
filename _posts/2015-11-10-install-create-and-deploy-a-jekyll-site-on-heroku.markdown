@@ -2,11 +2,11 @@
 layout: post
 title:  "Install, Create and Deploy a Jekyll Site on Heroku"
 date:   2015-11-10 13:47:01 -0800
-categories: jekyll heroku blog
+categories: Jekyll Heroku blog Rack RubyGems Bundler
 author: Brian Becker
 ---
 
-I wanted to start a blog, and I wanted to do it with a something that I could hack on a little.  Well, after finally figuring out what Jekyll was and getting it installed on my system, things worked nicley.  Then I went to push it to Heroku, and KABOOM!  Combing through other blogs that were fairly current but none that helped in any one configuration, I found a combination of steps to actually get this up and running.  Hope you find it useful!
+I wanted to start a blog, and I wanted to do it with a something that I could hack on a little.  Well, after finally figuring out what Jekyll was and getting it installed on my system, things worked nicely.  Then I went to push it to Heroku, and KABOOM!  Combing through other blogs that were fairly current but none that helped in any one configuration, I found a combination of steps to actually get this up and running.  Hope you find it useful!
 
 ###What is Jekyll?
 
@@ -35,14 +35,14 @@ $cd my-blog-site
 
 
 ###Setup git repo, your Gemfile and configure Rack
-*Credit [James Ward's Blog][james-ward-blog] and [Matt Hodens Blog][matt-hodans-blog]*
+*Credit [James Ward's Blog][james-ward-blog] and [Matt Hoden's Blog][matt-hodans-blog]*
 
-Once in the new project directory, I initiailized a new git file:
+Once in the new project directory, I initialized a new git file:
 {% highlight ruby %}
 $git init
 {% endhighlight %}
 
-I used Bundler to initialize a new Gemfile (Bundler will create a gemfile in the root directory of the project)
+I used Bundler to initialize a new Gemfile (Bundler will create a Gemfile in the root directory of the project)
 {% highlight ruby %}
 $bundle init
 {% endhighlight %}
@@ -111,7 +111,7 @@ $git commit -am 'Initial commit'
 ###Deploy:
 
 When I deploy to heroku, I will use the local master to push to Heroku.
-I created a new Heroku app and pushed the master up to the new account
+I created a new Heroku app and pushed the master up to the new app
 
 {% highlight ruby  %}
 $heroku create # this will create a new app on your account
@@ -124,12 +124,29 @@ Then I opened the site and took a look
 $heroku open
 {% endhighlight %}
 
-Everything worked!! 
+###What didn't work:
 
-I learned more about how RubyGems and Bundler work in this project, and a little bit more about how Heroku and Rack work together. Back to my studies... 
+- I tried to update my .gitignore file to ignore the .bundle directory.  That didn't work, as I received errors on Heroku deployment
+- I tried to change 'vendor' to '_vendor' in the _config.yml file inside the exclude array, and that caused errors in the Heroku deploy, as well.
+
+###Troubleshooting
+
+- I had an app error when visiting the site after deployment, so ran the heroku restart command, and it fixed that right up.
+
+{% highlight ruby  %}
+$heroku restart # restart the Heroku dynos
+{% endhighlight %}
+
+
+###What I learned
+
+I learned more about how RubyGems and Bundler work.  [RubyGems][rubygems-home] is a service that hosts ruby gems to the community.  The CLI is useful for installing, uninstalling and listing your installed gems, among other features.  [Bundler][bundler-home] is a tool that tracks the dependencies of the gems that you use, and installs the gems that you need.  [Heroku][heroku-home] supports [Rack][rack-home] and rack-based application. Rack is a ruby web server interface that takes an app that responds to `call` that takes the environment hash, and returns the HTTP response code, a hash of headers and the response body. 
 
 
 [jekyll-home]: https://jekyllrb.com/
 [heroku-home]: https://www.heroku.com/
 [matt-hodans-blog]: http://matthodan.com/2012/10/27/how-to-create-a-blog-with-jekyll.html
 [james-ward-blog]: http://www.jamesward.com/2014/09/24/jekyll-on-heroku
+[rubygems-home]: https://rubygems.org/
+[bundler-home]: http://bundler.io/
+[rack-home]: http://rack.github.io/
