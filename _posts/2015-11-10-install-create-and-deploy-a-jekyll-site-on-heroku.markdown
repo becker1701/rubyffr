@@ -1,9 +1,16 @@
 ---
-layout: post
-title:  "Install, Create and Deploy a Jekyll Site on Heroku"
-date:   2015-11-10 13:47:01 -0800
-categories: Jekyll Heroku blog Rack RubyGems Bundler
-author: Brian Becker
+layout:     post
+title:      "Install, Create and Deploy a Jekyll Site on Heroku"
+date:       2015-11-10 13:47:01 -0800
+categories: 
+- Jekyll 
+- Heroku 
+- blog 
+- Rack 
+- RubyGems 
+- Bundler
+author:     Brian Becker
+comments:   true
 ---
 
 I wanted to start a blog, and I wanted to do it with a something that I could hack on a little.  Well, after finally figuring out what Jekyll was and getting it installed on my system, things worked nicely.  Then I went to push it to Heroku, and KABOOM!  Combing through other blogs that were fairly current but none that helped in any one configuration, I found a combination of steps to actually get this up and running.  Hope you find it useful!
@@ -142,6 +149,35 @@ $heroku restart # restart the Heroku dynos
 
 I learned more about how RubyGems and Bundler work.  [RubyGems][rubygems-home] is a service that hosts ruby gems to the community.  The CLI is useful for installing, uninstalling and listing your installed gems, among other features.  [Bundler][bundler-home] is a tool that tracks the dependencies of the gems that you use, and installs the gems that you need.  [Heroku][heroku-home] supports [Rack][rack-home] and rack-based application. Rack is a ruby web server interface that takes an app that responds to `call` that takes the environment hash, and returns the HTTP response code, a hash of headers and the response body. 
 
+
+{% if page.comments %}
+
+###Comments
+
+  <div id="disqus_thread"></div>
+  <script>
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+       */
+      /*
+      var disqus_config = function () {
+          this.page.url = {{ site.url }}{{ page.url | replace:'index.html',''}}
+          this.page.identifier = {{ page.id }}
+      };
+      */
+      (function() {  // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          
+          s.src = '//rubyffr.disqus.com/embed.js';
+          
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+{% endif %}
 
 [jekyll-home]: https://jekyllrb.com/
 [heroku-home]: https://www.heroku.com/
