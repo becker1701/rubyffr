@@ -4,6 +4,8 @@ title:      "Test 1"
 date:       2015-11-19 09:45:00 -0800
 categories: 
 - test
+- tag 1
+- something
 author:     Brian Becker
 ---
 
