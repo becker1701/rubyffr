@@ -5,8 +5,8 @@ date:   2015-11-12 20:40:00 -0800
 categories: 
 - Ruby 
 - Learning 
-- Developer_School
-- Tealeaf_Academy
+- Developer School
+- Tealeaf Academy
 author: Brian Becker
 ---
 
