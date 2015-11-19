@@ -7,7 +7,7 @@ categories:
 - Language 
 - Style 
 - Formatting 
-- Best_Practices
+- Best Practices
 author:     Brian Becker
 comments:   true
 ---
