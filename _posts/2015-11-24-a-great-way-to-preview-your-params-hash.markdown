@@ -10,7 +10,7 @@ author:     Brian Becker
 comments:   true
 ---
 
-Using `binding.pry` is without a doubt, one of my best freinds debugging Rails apps.  And, I found a great way to show the params , and here is one that will allow you to view your params hash across all of your views in your development environment without any `binding.pry`'s or the like.
+Using `binding.pry` is without a doubt one of my best freinds when debugging Rails apps.  I found a little trick that will allow you to view your params hash across all of your views in your development environment without any `binding.pry`'s or the like.
 
 1. Open your application.html.erb file.
 
