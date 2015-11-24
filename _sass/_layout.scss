@@ -238,5 +238,9 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
     }
 }
