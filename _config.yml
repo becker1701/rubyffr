@@ -11,8 +11,9 @@ email: brian@rubyffr.com
 description: This is a blog which is about things that I learn about Ruby, Rails and web development.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rubyffr.com" # the base hostname & protocol for your site
-twitter_username: becker1701
+# twitter_username: becker1701
 github_username:  becker1701
+linked_in_username: becker1701
 
 # Build settings
 markdown: kramdown
