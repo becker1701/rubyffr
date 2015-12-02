@@ -11,7 +11,6 @@ I learned Ruby on Rails by going through [Micheal Hartl Ruby on Rails Tutorial][
 Enter [LaunchSchool][launchschool-home]: 
 LaunchSchool.com is an online, self-paced Ruby and Rails school that teach fundimentals of Ruby first, then dive into the inner workings of Rails so that their students get the most in-depth look at the Rails framework and how everything fits together.
 
-**Ruby - For Future Reference** is my blog that I am putting together as I progress through the Tealeaf courses, and ultimatly as a web developer going forward.
 
 
 [ruby-on-rails-tutorial-home]: https://www.railstutorial.org/book
